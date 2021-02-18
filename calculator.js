@@ -56,7 +56,7 @@ const setStrAsValue = (valueStr) => {
   }
 
   if (wholeNumStr > 100000000000000000) {
-    valueEl.style.fontSize = "20px";
+    valueEl.style.fontSize = "30px";
     valueEl.textContent = "Number Too High! Reloading..."
     setTimeout(() => window.location.reload(), 800);
 };
