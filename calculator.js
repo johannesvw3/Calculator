@@ -55,9 +55,11 @@ const setStrAsValue = (valueStr) => {
     valueEl.textContent = parseFloat(wholeNumStr).toLocaleString();
   }
 
-  if (wholeNumStr > 10000000000000000000) {
-    valueEl.textContent = "I Can't Count That High!";
-  };
+  if (wholeNumStr > 100000000000000000) {
+    valueEl.style.fontSize = "20px";
+    valueEl.textContent = "Number Too High! Reloading..."
+    setTimeout(() => window.location.reload(), 800);
+};
 };
 
 const handleNumberClick = (numStr) => {
@@ -154,18 +156,7 @@ equalEl.addEventListener('click', () => {
 for (let i=0; i < numberElArray.length; i++) {
   const numberEl = numberElArray[i];
   numberEl.addEventListener('click', () => {
-    var buttons = document.querySelectorAll("button");
- 
- for (button in buttons) {
-    buttons[button].onclick = function() {
-        buttons.forEach(function(btn){
-          btn.classList.remove('highlight');
-        })
-        this.classList.add('highlight');
-    }
-}
-
-    handleNumberClick(i.toString());
+      handleNumberClick(i.toString());
   });
 }
 decimalEl.addEventListener('click', () => {
@@ -175,8 +166,7 @@ decimalEl.addEventListener('click', () => {
   }
 });
 
-//change Color
-const buttons = document.querySelectorAll("button");
+  const buttons = document.querySelectorAll("button");
  
  for (button in buttons) {
     buttons[button].onclick = function() {
@@ -185,5 +175,5 @@ const buttons = document.querySelectorAll("button");
         })
         this.classList.add('highlight');
     }
-}
+};
 
