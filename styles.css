@@ -86,5 +86,5 @@ grid-template-rows: repeat(5, 1fr);
 }
 
 .highlight {
-    background-color: rgb(210, 70, 15);
+    background-color: rgb(210, 70, 15) !important;
 }
